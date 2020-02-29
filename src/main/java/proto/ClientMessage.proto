@@ -1,0 +1,33 @@
+﻿
+message ClientMessage {
+	enum MessageType {
+		firstConnect = 1;
+		playerInfo = 2;
+		disconnect = 3;
+	}
+
+	required ClientInformation clientInformation = 1;
+	required MessageType messageType = 2;
+	optional string playerName = 3;
+}
+
+message ClientInformation {
+	optional MousePosition mousePosition = 1;
+	optional WindowCenterPosition windowCenterPosition = 2;
+}
+
+message MousePosition {
+	required float x = 1;
+	required float y = 2;
+}
+
+message WindowCenterPosition {
+	required float x = 1;
+	required float y = 2;
+}
+
+
+
+
+
+

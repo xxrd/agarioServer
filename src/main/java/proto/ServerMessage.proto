@@ -1,0 +1,42 @@
+﻿
+message ServerMessage {
+	enum MessageType {
+		gameInfo = 1;
+		disconnect = 2;
+	}
+
+	optional FoodList foodList = 1;
+	optional PlayerList playerList = 2;
+	optional CurrentPlayer currentPlayer = 3;
+	required MessageType messageType = 4;
+}
+
+message FoodList {
+	repeated Food food = 1;
+}
+
+message PlayerList {
+	repeated Player player = 1;
+}
+
+message Food {
+	required float x = 1;
+	required float y = 2;
+	required float mass = 3;
+	required bool eaten = 4;
+}
+
+message Player {
+	required float x = 1;
+	required float y = 2;
+	required float mass = 3;
+	required string name = 4;
+	required int32 id = 5;
+}
+
+message CurrentPlayer {
+	required float x = 1;
+	required float y = 2;
+	required float mass = 3;
+	required string name = 4;
+}
